@@ -55,6 +55,22 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
     transition: all 0.4s 0.2s;
+
+    @include respond(tab-land) {
+      width: 85%;
+      height: 55rem;
+    }
+
+    @include respond(tab-port) {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+
+    @include respond(phone) {
+      width: 95%;
+    }
   }
 
   &:target &__content {
@@ -65,6 +81,16 @@
   &__left {
     width: 33.333333%;
     display: table-cell;
+
+    @include respond(tab-port) {
+      display: flex;
+      width: 100%;
+      height: 20rem;
+    }
+
+    @include respond(phone) {
+      height: 15rem;
+    }
   }
 
   &__right {
@@ -72,11 +98,28 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include respond(tab-port) {
+      display: block;
+      width: 100%;
+      padding: 2rem 3rem;
+    }
+
+    @include respond(phone) {
+      padding: 1.5rem 2rem;
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+    height: 50%;
+    object-fit: cover;
+
+    @include respond(tab-port) {
+      width: 50%;
+      height: 100%;
+    }
   }
 
   &__text {
@@ -94,5 +137,11 @@
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+
+    @include respond(tab-port) {
+      column-count: 1;
+      -moz-column-count: 1;
+      -webkit-column-count: 1;
+    }
   }
 }
