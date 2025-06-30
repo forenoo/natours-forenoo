@@ -24,7 +24,6 @@ html {
 
 body {
   overflow-x: hidden;
-  padding: 3rem;
 
   @include respond(tab-port) {
     padding: 0;
